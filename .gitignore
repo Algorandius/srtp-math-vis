@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Manim 渲染输出（体积巨大，禁止提交）
+media/
+*.mp4
+*.mov
+partial_movie_files/
