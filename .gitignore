@@ -224,3 +224,13 @@ media/
 *.mp4
 *.mov
 partial_movie_files/
+
+# 密钥与环境变量（严禁提交到云端）
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.py
+api_keys.*
+config_local.py
