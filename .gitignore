@@ -234,3 +234,6 @@ partial_movie_files/
 secrets.py
 api_keys.*
 config_local.py
+
+# IDE 配置（PyCharm）
+.idea/
