@@ -237,3 +237,6 @@ config_local.py
 
 # IDE 配置（PyCharm）
 .idea/
+
+# AI 编程助手配置
+.continue/
