@@ -9,7 +9,7 @@
 结构（基准时长约 10.5 分钟）：
     ch00 片头          ch05 ε 带            ch10 反例 (-1)^n
     ch01 直觉          ch06 门              ch11 N 不唯一
-    ch02 青蛙游戏      ch07 ε 缩小 ★核心    ch11b 定义的三句话
+    ch02 青蛙游戏      ch07 ε 缩小核心     ch11b 定义的三句话
     ch03 坐标系        ch08 通式            ch12 ε-N 定义
     ch04 逐项展开      ch09 振荡数列
 
@@ -859,12 +859,12 @@ class SequenceLimit(MovingCameraScene):
         self.wait(6.0)
         self.gate = g
 
-    # ---------------- 章 7：ε 缩小 → N 右移 ★核心 ----------------
+    # ---------------- 章 7：ε 缩小，N 右移 ----------------
     def ch07_shrink_eps(self):
         """
-        ★ 全片灵魂。ε 走 0.5 → 0.2 → 0.1 → 0.04 → 0.05(互动) → 0.01 六档。
-        每档：带变窄 / 项标红 / 门右移，同时横轴分度值随镜头推近变细、
-        镜头跟随门 N 推近平移；每放大一档补几个点提高密度（不过密）。
+        ε 走 0.5 → 0.2 → 0.1 → 0.04 → 0.05(互动) → 0.01 六档。
+        每档：带变窄、项标红、门右移；同时横轴分度值随镜头推近变细，
+        镜头跟随门 N 平移；每放大一档补几个点提高密度。
         """
         self.caption("现在提高要求：如果 ε 变小，还能满足吗？", write_time=2.0)
         # 本章横轴加刻度数字（每 2 个刻度标一个数，密度适中），便于看出 N 在右移
@@ -1245,7 +1245,7 @@ class SequenceLimit(MovingCameraScene):
         self.ch04_terms()
         self.ch05_eps_band()
         self.ch06_gate()
-        self.ch07_shrink_eps()      # ← ★ 灵魂章节，节奏 / 镜头都在这调
+        self.ch07_shrink_eps()      # 核心章节，节奏与镜头在此调
         self.ch08_formula_N()
         self.ch09_oscillating()
         self.ch10_counterexample()
