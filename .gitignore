@@ -219,11 +219,23 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Manim 渲染输出（体积巨大，禁止提交）
-media/
-*.mp4
-*.mov
+# Manim 渲染输出
+# media/ 整体仍是渲染垃圾场，只白名单放行 4K 成片（走 Git LFS）：
+#   media/videos/*/2160p60/*.mp4    各概念的 4K 成片
+#   media/with_bgm/*_2160p60_bgm.mp4 配好 BGM 的 4K 成片
+# 低画质（480p15 / 1080p60）与中间产物一律不入库：体积大且可随时本地重渲。
+media/*
+!media/videos/
+!media/with_bgm/
+media/Tex/
+media/texts/
+media/images/
 partial_movie_files/
+*.mp4
+!media/videos/*/2160p60/
+!media/videos/*/2160p60/*.mp4
+!media/with_bgm/*_2160p60_bgm.mp4
+*.mov
 
 # 密钥与环境变量（严禁提交到云端）
 .env

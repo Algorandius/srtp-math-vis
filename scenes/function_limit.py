@@ -616,13 +616,18 @@ class FunctionLimit(BaseScene):
         self.play(Create(axes), Write(labels), run_time=2.4)
         self.play(Create(curve), run_time=2.0)
 
-        eps = 0.4
+        # ε 取 0.3 而不是 0.4：本章的落点是 δ = min(1, ε/3)，取 0.4 会得到
+        # 0.133 这个除不尽的数，屏幕上的数值牌只能四舍五入，和右边的公式牌
+        # 对不上（曾经写成 0.18，与 min(1, ε/3) 直接矛盾，学生一算就发现）。
+        # 0.3 使 δ 恰好等于 0.1，与章末「ε=0.3 ⇒ δ=0.1」的数值牌一致。
+        # δ 一律由公式算出，不手写常数。
+        eps = 0.3
         band = hband(axes, A_MAIN, eps, 0, 2.0)
         self.play(FadeIn(band[0]), Create(band[1]), Create(band[2]),
                   run_time=1.6)
         self.wait(2.0)
 
-        d = 0.18
+        d = min(1.0, eps / 3.0)
         strip = vstrip(axes, X0, d, 0, 2.6, gap_ratio=0.20)
         self.play(FadeIn(strip[0]), FadeIn(strip[1]),
                   Create(strip[2]), Create(strip[3]), run_time=1.6)
